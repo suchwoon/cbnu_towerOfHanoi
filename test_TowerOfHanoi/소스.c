@@ -104,7 +104,7 @@ void towerOfHanoi(int towerSize, Tower* from, Tower* temp, Tower* to) {
 /* 현재 타워들의 상태 그림으로 출력 */
 void drawAllTowers(void) {
 	giveDelay(1000);
-	int floor = 0;	// 출력 층 변수 선언
+	int floor;	// 출력 층 변수 선언
 	for (floor = a.max; floor > 0; floor--) {	// 출력 층이 원판 최대 개수부터 1층까지 반복
 		drawFloor(&a, floor);	// 각 타워에 대한 drawFloor 함수 호출
 		drawFloor(&b, floor);
@@ -151,7 +151,7 @@ int main(void) {
 	Initialize(&b, towerSize);
 	Initialize(&c, towerSize);
 
-	int i = 0;	// 반복문을 위한 매개변수 선언
+	int i;	// 반복문을 위한 매개변수 선언
 	for (i = 0; i < towerSize; i++) {	// 타워 a에 모든 원판 Push
 		Push(&a, towerSize - i);	// 가장 큰 원판부터 순서대로 Push
 	}
