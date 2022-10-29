@@ -108,7 +108,7 @@ void drawAllTowers(void) {
 	for (floor = a.max; floor > 0; floor--) {	// 출력 층이 원판 최대 개수부터 1층까지 반복
 		drawFloor(&a, floor);	// 각 타워에 대한 drawFloor 함수 호출
 		drawFloor(&b, floor);
-		drawFloor(&c, floor);	// drawAllTowers 함수 내의 pa, pb, pc는 포인터이므로 &를 붙일 필요 없음
+		drawFloor(&c, floor);
 		printf("\n");
 	}
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);	// 텍스트 색 흰색으로
@@ -156,7 +156,7 @@ int main(void) {
 		Push(&a, towerSize - i);	// 가장 큰 원판부터 순서대로 Push
 	}
 
-	drawAllTowers(&a, &b, &c);
+	drawAllTowers();
 
 	towerOfHanoi(towerSize, &a, &b, &c);	// 하노이의 탑 함수 실행
 
